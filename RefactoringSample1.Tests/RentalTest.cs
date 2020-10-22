@@ -3,7 +3,10 @@ using Xunit;
 using System.Collections.Generic;
 
 namespace RefactoringSample1.Tests
-{
+{   
+    /// <summary>
+    /// Test rental class
+    /// </summary>
     public class RentalTest
     {
         private static List<Movie> _movies = new List<Movie>
@@ -13,6 +16,11 @@ namespace RefactoringSample1.Tests
                 new Movie("Avengers: Endgame", Movie.REGULAR)
             };
 
+        /// <summary>
+        /// Test get frequent points
+        /// </summary>
+        /// <param name="rental">Rental object</param>
+        /// <param name="points">int correct frequent renter points obtained from rental object</param>
         [Theory]
         [MemberData(nameof(FrequentPointsTestData))]
         public void GetFrequentPoints(Rental rental, int points)
@@ -20,6 +28,11 @@ namespace RefactoringSample1.Tests
             Assert.Equal(Rental.GetFrequentPoints(rental), points);
         }
 
+        /// <summary>
+        /// Test get charge
+        /// </summary>
+        /// <param name="rental">Rental object</param>
+        /// <param name="charge">int correct charge of rental object</param>
         [Theory]
         [MemberData(nameof(GetChargeRentalTestData))]
         public void GetCharge(Rental rental, double charge)
@@ -27,6 +40,10 @@ namespace RefactoringSample1.Tests
             Assert.Equal(Rental.GetCharge(rental), charge);
         }
 
+        /// <summary>
+        /// Test data for GetFrequentPoints
+        /// </summary>
+        /// <returns>TheoryData test data</returns>
         public static TheoryData<Rental, int> FrequentPointsTestData()
         {
             return new TheoryData<Rental, int>
@@ -42,6 +59,10 @@ namespace RefactoringSample1.Tests
             };
         }
 
+        /// <summary>
+        /// Test data for GetCharge
+        /// </summary>
+        /// <returns>TheoryData test data</returns>
         public static TheoryData<Rental, double> GetChargeRentalTestData()
         {
             return new TheoryData<Rental, double>

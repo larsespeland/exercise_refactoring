@@ -4,24 +4,64 @@ using System.Text;
 
 namespace RefactoringSample1
 {
+    /// <summary>
+    /// Rental information
+    /// </summary>
 	public class Rental
 	{
 		private Movie _movie;
 		private int _daysRented;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="movie">Movie movie rented</param>
+        /// <param name="daysRented">int number of days rented</param>
 		public Rental(Movie movie, int daysRented)
 		{
 			_movie = movie;
 			_daysRented = daysRented;
 		}
+
+        /// <summary>
+        /// Get number of days movie is rented
+        /// </summary>
+        /// <returns>int number of days rented</returns>
 		public int GetDaysRented()
 		{
 			return _daysRented;
 		}
+
+        /// <summary>
+        /// Get movie rented
+        /// </summary>
+        /// <returns>Movie movie rented</returns>
 		public Movie GetMovie()
 		{
 			return _movie;
 		}
+
+        /// <summary>
+        /// Get charge of rental 
+        /// </summary>
+        /// <param name="rental">Rental object</param>
+        /// <returns>double charge of rental</returns>
+        public static double GetCharge(Rental rental)
+        {
+            return rental.GetMovie().GetCharge(rental.GetDaysRented());
+        }
+
+        /// <summary>
+        /// Get frequent renter points obtained
+        /// </summary>
+        /// <param name="rental">Rental object</param>
+        /// <returns>int frequent renter points obtained from rental</returns>
+        public static int GetFrequentPoints(Rental rental)
+        {
+            return rental.GetMovie().GetFrequentPoints(rental.GetDaysRented());
+        }
+
+        /*
         public static double GetCharge(Rental rental)
         {
             double thisAmount = 0;
@@ -53,5 +93,7 @@ namespace RefactoringSample1
                 frequentRenterPoints++;
             return frequentRenterPoints;
         }
+        */
+        
     }
 }
