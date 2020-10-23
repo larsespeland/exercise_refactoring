@@ -10,8 +10,15 @@ namespace RefactoringSample1
 	/// </summary>
     public class MovieTest
     {
+		private static List<Movie> _movies = new List<Movie>
+			{
+				new Movie("The Lion King", Movie.CHILDRENS),
+				new Movie("Joker", Movie.NEW_RELEASE),
+				new Movie("Avengers: Endgame", Movie.REGULAR)
+			};
+
 		/// <summary>
-		/// Test that movie methods are correct
+		/// Test of movie methods
 		/// </summary>
 		/// <param name="movie">Movie object</param>
 		/// <param name="daysRented">int number of days movie is rented</param>
@@ -36,9 +43,9 @@ namespace RefactoringSample1
 		{
 			return new TheoryData<Movie, int, double, int>
 			{
-				{new Movie("The Lion King", Movie.CHILDRENS), 2, 1.5, 1},
-				{ new Movie("Joker", Movie.NEW_RELEASE), 4, 12, 2 },
-				{ new Movie("Avengers: Endgame", Movie.REGULAR), 1, 2, 1},
+				{_movies[0], 2, 1.5, 1},
+				{_movies[1], 4, 12, 2 },
+				{_movies[2], 1, 2, 1},
 			};
 		}
 	}

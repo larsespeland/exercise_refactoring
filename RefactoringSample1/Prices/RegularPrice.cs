@@ -12,7 +12,7 @@ namespace RefactoringSample1
         /// <summary>
         /// Get price code of a regular movie
         /// </summary>
-        /// <returns>int stating the price code</returns>
+        /// <returns>int price code</returns>
         public override int GetPriceCode()
         {
             return Movie.REGULAR;
@@ -21,8 +21,8 @@ namespace RefactoringSample1
         /// <summary>
         /// Get charge of a regular movie
         /// </summary>
-        /// <param name="daysRented"> int stating number of days movie is rented</param>
-        /// <returns>double stating the charge </returns>
+        /// <param name="daysRented"> int number of days movie is rented</param>
+        /// <returns>double charge </returns>
         public override double GetCharge(int daysRented)
         {
             double result = 2;
