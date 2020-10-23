@@ -16,7 +16,7 @@ namespace RefactoringSample1
         /// Constructor
         /// </summary>
         /// <param name="movie">Movie movie rented</param>
-        /// <param name="daysRented">int number of days rented</param>
+        /// <param name="daysRented">int number of days the movie is rented</param>
 		public Rental(Movie movie, int daysRented)
 		{
 			_movie = movie;
@@ -24,7 +24,7 @@ namespace RefactoringSample1
 		}
 
         /// <summary>
-        /// Get number of days movie is rented
+        /// Get number of days the movie is rented
         /// </summary>
         /// <returns>int number of days rented</returns>
 		public int GetDaysRented()

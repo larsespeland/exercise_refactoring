@@ -20,10 +20,11 @@ namespace RefactoringSample1
 		{
 			_name = name;
 		}
+
 		/// <summary>
 		/// Add new rental to the customer
 		/// </summary>
-		/// <param name="rent">Rental a rent object rented by customer</param>
+		/// <param name="rent">Rental rental object rented by customer</param>
 		public void AddRental(Rental rent)
 		{
 			_rentals.Add(rent);
